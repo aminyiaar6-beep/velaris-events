@@ -1,6 +1,9 @@
 # Velaris Events · web
 
-Web publicada: **https://velaris-events-sl.netlify.app**
+Web publicada:
+- Català: **https://velaris-events-sl.netlify.app**
+- Castellano: **https://velaris-events-sl.netlify.app/es/**
+- English: **https://velaris-events-sl.netlify.app/en/**
 
 Aquest projecte està connectat a Netlify. **Qualsevol canvi que guardeu aquí es publica sol a la web en un o dos minuts.**
 
@@ -10,6 +13,7 @@ Aquest projecte està connectat a Netlify. **Qualsevol canvi que guardeu aquí e
 |---|---|
 | `index.html` | Tota la web: textos, packs, preus, viatges i el formulari |
 | `gracies.html` | Pàgina que surt després d'enviar el formulari (només si el navegador no té JavaScript) |
+| `es/index.html`, `en/index.html` | La mateixa web en castellà i en anglès. Si canvieu un preu o un text, canvieu-lo també aquí |
 | `img/` | Totes les fotos i el logo |
 
 ## Com canviar un text o un preu

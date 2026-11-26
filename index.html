@@ -10,6 +10,9 @@
 <meta property="og:description" content="Organitzem celebracions úniques i viatges personalitzats perquè només t'hagis de preocupar de gaudir.">
 <meta property="og:image" content="https://velaris-events-sl.netlify.app/img/hero.webp">
 <link rel="icon" href="https://velaris-events-sl.netlify.app/img/logo.webp">
+<link rel="alternate" hreflang="ca" href="https://velaris-events-sl.netlify.app/">
+<link rel="alternate" hreflang="es" href="https://velaris-events-sl.netlify.app/es/">
+<link rel="alternate" hreflang="en" href="https://velaris-events-sl.netlify.app/en/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -329,6 +332,13 @@ footer ul a:hover{color:var(--gold2)}
 @media(max-width:1020px){.tiles{grid-template-columns:repeat(2,1fr)}.tile{height:340px}}
 @media(max-width:620px){.tiles{grid-template-columns:1fr}.tile{height:300px}.phead{min-height:380px}.phead-in{padding:130px 20px 44px}}
 
+/* LANGUAGE SWITCH */
+.menu .langs{display:flex;gap:2px;align-items:center}
+.menu .langs a.lg{font-size:11px;font-weight:800;letter-spacing:.1em;padding:6px 8px;border-radius:999px;border:1px solid transparent;font-family:var(--sans)}
+.menu .langs a.lg:after{display:none}
+.menu .langs a.lg.cur{border-color:currentColor}
+@media(max-width:860px){.menu .langs a.lg{font-size:14px;letter-spacing:.12em;font-family:var(--sans)}}
+
 /* RESPONSIVE */
 @media(max-width:1020px){
   .essence,.req-grid{grid-template-columns:1fr;gap:50px}
@@ -383,6 +393,7 @@ footer ul a:hover{color:var(--gold2)}
       <a href="#packs">Packs</a>
       <a href="#com-treballem">Com treballem</a>
       <a href="#viatges">Viatges</a>
+      <span class="langs" aria-label="Idioma"><a class="lg cur" href="https://velaris-events-sl.netlify.app/">CA</a><a class="lg" href="https://velaris-events-sl.netlify.app/es/">ES</a><a class="lg" href="https://velaris-events-sl.netlify.app/en/">EN</a></span>
       <a class="btn" href="#demana">Demana el teu event</a>
     </nav>
     <button class="burger" id="burger" aria-label="Obrir el menú" aria-expanded="false"><i></i><i></i><i></i></button>
@@ -608,6 +619,7 @@ footer ul a:hover{color:var(--gold2)}
     <div class="formcard rv d-1">
       <form name="sollicitud-event" id="reqForm" method="POST" action="https://velaris-events-sl.netlify.app/gracies.html" data-netlify="true" netlify-honeypot="bot-field" novalidate>
         <input type="hidden" name="form-name" value="sollicitud-event">
+        <input type="hidden" name="idioma" value="Català">
         <p class="hp"><label>No omplis aquest camp: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <input type="hidden" name="serveis_addicionals" id="extrasField">
         <input type="hidden" name="subject" id="subjectField" value="Nova sol·licitud d'event - Velaris Events">
@@ -745,6 +757,7 @@ footer ul a:hover{color:var(--gold2)}
   /* mobile menu */
   var burger=$('#burger');
   burger.addEventListener('click',function(){var o=document.body.classList.toggle('menu-open');burger.setAttribute('aria-expanded',o)});
+  $$('.langs a').forEach(function(a){a.addEventListener('click',function(){a.href=a.href.split('#')[0]+(location.hash||'')})});
   $$('#menu a').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('menu-open');burger.setAttribute('aria-expanded',false)})});
 
   /* reveal */
@@ -840,7 +853,7 @@ footer ul a:hover{color:var(--gold2)}
       _template:'table',_captcha:'false',_replyto:val('email'),
       "Tipus d'event":val('tipus'),'Pack':val('pack'),'Data':fmtDate(val('data')),'Convidats':val('convidats'),
       'Lloc':val('lloc')||'-','Pressupost':val('pressupost'),'Serveis addicionals':extras().join(', ')||'Cap',
-      'Viatge':val('viatge'),'Nom':val('nom'),'Correu':val('email'),'Telèfon':val('telefon')||'-','Missatge':val('missatge')||'-'
+      'Viatge':val('viatge'),'Nom':val('nom'),'Correu':val('email'),'Telèfon':val('telefon')||'-','Missatge':val('missatge')||'-','Idioma':'Català'
     };
     var toMail=fetch('https://formsubmit.co/ajax/velariseventss@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(mail)})
       .then(function(r){return r.json()}).then(function(j){return j&&(j.success===true||j.success==='true')});
