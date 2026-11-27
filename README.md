@@ -32,6 +32,10 @@ Aquest projecte està connectat a Netlify. **Qualsevol canvi que guardeu aquí e
 
 Noms de les fotos: `hero` (portada), `logo`, `cas-plata`, `cas-or`, `cas-diamant`, `inf-plata`, `inf-or`, `inf-diamant`, `nado-or`, `nado-diamant`, `adults`, `soltera`, `jubilacio`, `empresa`, `pinta1`, `pinta2`, `pinta3`, `inflables`, `escuma`, `foto2`, `foto3`, `italia`, `espanya`, `franca`, `indonesia`, `regneunit`, `portugal`, `finlandia`.
 
+## Fotos
+
+Les fotos de la web (novembre 2026) són d'[Unsplash](https://unsplash.com), que permet fer-les servir gratis, també en webs d'empresa. El logo és el de Velaris Events.
+
 ## Si alguna cosa es trenca
 
 Cada canvi queda guardat. A Netlify (o aquí, a **History** de cada fitxer) es pot tornar a una versió anterior. No toqueu el formulari (`<form name="sollicitud-event" …>`): és el que envia les sol·licituds a **velariseventss@gmail.com**.
